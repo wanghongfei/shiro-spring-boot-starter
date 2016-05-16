@@ -72,9 +72,14 @@ public class ShiroAutoConfiguration {
 		return shiroFilter;
 	}
 
-    private Map<String, String> swapKeyValue(Map<String, String> originalMap) {
-        Map<String, String> map = new HashMap<>();
-        for (Map.Entry<String, String> entry : originalMap.entrySet()) {
+    /**
+     * 交换Map中的K和V
+     * @param originalMap
+     * @return
+     */
+    private <K, V> Map<V, K> swapKeyValue(Map<K, V> originalMap) {
+        Map<V, K> map = new HashMap<>();
+        for (Map.Entry<K, V> entry : originalMap.entrySet()) {
             map.put(entry.getValue(), entry.getKey());
         }
 
