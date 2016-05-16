@@ -45,9 +45,9 @@ public class ShiroManager {
 		return new LifecycleBeanPostProcessor();
 	}
 
-	@Bean(name = "defaultAdvisorAutoProxyCreator")
-	@ConditionalOnMissingBean
-	@DependsOn("lifecycleBeanPostProcessor")
+	//@Bean(name = "defaultAdvisorAutoProxyCreator")
+	//@ConditionalOnMissingBean
+	//@DependsOn("lifecycleBeanPostProcessor")
 	public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
 		DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
 		defaultAdvisorAutoProxyCreator.setProxyTargetClass(true);
